@@ -87,8 +87,8 @@ RUN mkdir -p ${ROOTSYS}/src && mkdir -p ${ROOTSYS}/build && \
 # 安装 Corryvreckan
 ENV CORRYPATH="/opt/corryvreckan"
 COPY contrib/corryvreckan ${CORRYPATH}
-RUN cd ${CORRYPATH} && \
-    mkdir -p build && cd build && \
+RUN mkdir -p ${CORRYPATH}/build && \
+    cd ${CORRYPATH}/build && \
     cmake -DBUILD_EventLoaderEUDAQ=OFF \
           -DBUILD_EventLoaderATLASpix=OFF \
           -DBUILD_EventLoaderCLICpix=OFF \
